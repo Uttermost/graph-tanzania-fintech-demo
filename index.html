@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Graph Fintech — Tanzania Product Concept</title>
+<title>Graph Fintech — Dhana ya Bidhaa Tanzania</title>
 <style>
 :root{
   --ink:#101828;--muted:#667085;--line:#e7eaf0;--bg:#f5f7fb;--card:#fff;
@@ -47,6 +47,17 @@ h3{margin:0 0 14px;font-size:16px}.section-head{display:flex;justify-content:spa
   .mgrid i{width:34px;height:34px}
   .mgrid div{font-size:8px}
 }
+
+.lang-switch{
+  display:flex;align-items:center;background:#f3f5f7;border:1px solid #e6e9ee;
+  border-radius:999px;padding:3px;gap:2px;margin-left:auto
+}
+.lang-switch button{
+  background:transparent;color:#667085;border:0;border-radius:999px;padding:6px 10px;
+  font-size:11px;font-weight:800
+}
+.lang-switch button.active{background:#fff;color:#0b7a53;box-shadow:0 1px 4px rgba(16,24,40,.08)}
+.top{gap:18px}
 </style>
 </head>
 <body>
@@ -54,40 +65,40 @@ h3{margin:0 0 14px;font-size:16px}.section-head{display:flex;justify-content:spa
 <aside class="sidebar">
   <div class="logo">Graph<span>Pay</span></div>
   <div class="nav">
-    <button class="active" data-screen="home">⌂ &nbsp; Home</button>
-    <button data-screen="pay">↗ &nbsp; Pay & Transfer</button>
-    <button data-screen="bills">▤ &nbsp; Bills & Services</button>
-    <button data-screen="save">◎ &nbsp; Save</button>
-    <button data-screen="family">👨‍👩‍👧 &nbsp; Family</button>
-    <button data-screen="business">▣ &nbsp; Business</button>
-    <button data-screen="rewards">★ &nbsp; Rewards</button>
-    <button data-screen="insights">◒ &nbsp; Insights & Activity</button>
+    <button class="active" data-screen="home" data-en="Home" data-sw="Nyumbani">⌂ &nbsp; Home</button>
+    <button data-screen="pay" data-en="Pay & Transfer" data-sw="Lipa na Tuma">↗ &nbsp; Pay & Transfer</button>
+    <button data-screen="bills" data-en="Bills & Services" data-sw="Bili na Huduma">▤ &nbsp; Bills & Services</button>
+    <button data-screen="save" data-en="Save" data-sw="Akiba">◎ &nbsp; Save</button>
+    <button data-screen="family" data-en="Family" data-sw="Familia">👨‍👩‍👧 &nbsp; Family</button>
+    <button data-screen="business" data-en="Business" data-sw="Biashara">▣ &nbsp; Business</button>
+    <button data-screen="rewards" data-en="Rewards" data-sw="Zawadi">★ &nbsp; Rewards</button>
+    <button data-screen="insights" data-en="Insights & Activity" data-sw="Maarifa na Shughuli">◒ &nbsp; Insights & Activity</button>
   </div>
-  <div class="country">🇹🇿 <b>Tanzania</b><br><span>Concept product • v0.2</span></div>
+  <div class="country">🇹🇿 <b id="country-name" data-en="Tanzania" data-sw="Tanzania">Tanzania</b><br><span id="concept-label" data-en="Concept product • v0.2" data-sw="Dhana ya bidhaa • v0.2">Concept product • v0.2</span></div>
 </aside>
 
 <main class="main">
 <section id="home" class="screen active">
-  <div class="top"><div><div class="eyebrow">Financial platform concept</div><div class="title">Good morning, Amina</div></div><div class="user"><span>Notifications</span><div class="avatar">AM</div></div></div>
+  <div class="top"><div><div class="eyebrow" data-en="Financial platform concept" data-sw="Dhana ya jukwaa la kifedha">Financial platform concept</div><div class="title" data-en="Good morning, Amina" data-sw="Habari za asubuhi, Amina">Good morning, Amina</div></div><div class="user"><div class="lang-switch" aria-label="Language selector"><button id="lang-en" onclick="setLang('en')">EN</button><button id="lang-sw" class="active" onclick="setLang('sw')">SW</button></div><span id="notify-label" data-en="Notifications" data-sw="Arifa">Notifications</span><div class="avatar">AM</div></div></div>
   <div class="grid">
     <div>
-      <div class="card balance"><div class="small">Available balance</div><div class="amount">TZS 2,845,600</div><div class="balance-actions"><button class="pill" onclick="show('pay')">Send money</button><button class="pill" onclick="show('save')">Save</button></div></div>
-      <div class="card" style="margin-top:18px"><div class="section-head"><h3>Quick actions</h3><span class="badge">Built around everyday money</span></div>
+      <div class="card balance"><div class="small" data-en="Available balance" data-sw="Salio linalopatikana">Available balance</div><div class="amount">TZS 2,845,600</div><div class="balance-actions"><button class="pill" onclick="show('pay')" data-en="Send money" data-sw="Tuma pesa">Send money</button><button class="pill" onclick="show('save')" data-en="Save" data-sw="Hifadhi">Save</button></div></div>
+      <div class="card" style="margin-top:18px"><div class="section-head"><h3 data-en="Quick actions" data-sw="Vitendo vya haraka" data-en="Quick actions" data-sw="Vitendo vya haraka">Quick actions</h3><span class="badge" data-en="Built around everyday money" data-sw="Imeundwa kwa matumizi ya kila siku ya fedha">Built around everyday money</span></div>
         <div class="actions">
-          <button class="action" onclick="show('pay')"><div class="ico">↗</div>Send</button>
-          <button class="action"><div class="ico">QR</div>Scan & Pay</button>
-          <button class="action" onclick="show('pay')"><div class="ico">↙</div>Request</button>
-          <button class="action" onclick="show('bills')"><div class="ico">₮</div>Bill / Airtime</button>
-          <button class="action" onclick="show('bills')"><div class="ico">🎟</div>Tickets</button>
-          <button class="action" onclick="show('family')"><div class="ico">👨‍👩‍👧</div>Family</button>
-          <button class="action" onclick="show('business')"><div class="ico">▣</div>Business</button>
-          <button class="action" onclick="show('rewards')"><div class="ico">★</div>Rewards</button>
+          <button class="action" onclick="show('pay')"><div class="ico">↗</div data-en="Send" data-sw="Tuma">Send</button>
+          <button class="action"><div class="ico">QR</div data-en="Scan & Pay" data-sw="Changanua na Lipa">Scan & Pay</button>
+          <button class="action" onclick="show('pay')"><div class="ico">↙</div data-en="Request" data-sw="Omba">Request</button>
+          <button class="action" onclick="show('bills')"><div class="ico">₮</div data-en="Bill / Airtime" data-sw="Bili / Muda wa maongezi">Bill / Airtime</button>
+          <button class="action" onclick="show('bills')"><div class="ico">🎟</div data-en="Tickets" data-sw="Tiketi">Tickets</button>
+          <button class="action" onclick="show('family')"><div class="ico">👨‍👩‍👧</div data-en="Family" data-sw="Familia">Family</button>
+          <button class="action" onclick="show('business')"><div class="ico">▣</div data-en="Business" data-sw="Biashara">Business</button>
+          <button class="action" onclick="show('rewards')"><div class="ico">★</div data-en="Rewards" data-sw="Zawadi">Rewards</button>
         </div>
       </div>
     </div>
-    <div class="card"><div class="section-head"><h3>Money snapshot</h3><span class="link">View insights</span></div>
-      <div class="insights"><div class="metric"><div class="l">This month</div><div class="v">TZS 684k</div><div class="l">spent</div></div><div class="metric"><div class="l">Saved</div><div class="v">TZS 420k</div><div class="l">+18%</div></div><div class="metric"><div class="l">Rewards</div><div class="v">1,240</div><div class="l">points</div></div></div>
-      <div style="height:15px"></div><h3>Recent activity</h3>
+    <div class="card"><div class="section-head"><h3 data-en="Money snapshot" data-sw="Muhtasari wa fedha" data-en="Money snapshot" data-sw="Muhtasari wa fedha">Money snapshot</h3><span class="link" data-en="View insights" data-sw="Angalia maarifa">View insights</span></div>
+      <div class="insights"><div class="metric"><div class="l" data-en="This month" data-sw="Mwezi huu">This month</div><div class="v">TZS 684k</div><div class="l" data-en="spent" data-sw="imetumika">spent</div></div><div class="metric"><div class="l" data-en="Saved" data-sw="Iliyohifadhiwa">Saved</div><div class="v">TZS 420k</div><div class="l">+18%</div></div><div class="metric"><div class="l" data-en="Rewards" data-sw="Zawadi">Rewards</div><div class="v">1,240</div><div class="l" data-en="points" data-sw="pointi">points</div></div></div>
+      <div style="height:15px"></div><h3 data-en="Recent activity" data-sw="Shughuli za hivi karibuni" data-en="Recent activity" data-sw="Shughuli za hivi karibuni">Recent activity</h3>
       <div class="tx"><div class="txl"><div class="txico">🛒</div><div><div class="txname">Mlimani Store</div><div class="txsub">Today • QR payment</div></div></div><div class="money negative">− TZS 34,500</div></div>
       <div class="tx"><div class="txl"><div class="txico">↙</div><div><div class="txname">Juma Hassan</div><div class="txsub">Today • Received</div></div></div><div class="money positive">+ TZS 80,000</div></div>
       <div class="tx"><div class="txl"><div class="txico">◎</div><div><div class="txname">Travel Goal</div><div class="txsub">Savings transfer</div></div></div><div class="money negative">− TZS 50,000</div></div>      <div class="tx"><div class="txl"><div class="txico">★</div><div><div class="txname">Reward earned</div><div class="txsub">Merchant loyalty</div></div></div><div class="money positive">+ 120 pts</div></div>
@@ -96,21 +107,21 @@ h3{margin:0 0 14px;font-size:16px}.section-head{display:flex;justify-content:spa
 </section>
 
 <section id="pay" class="screen">
-<div class="top"><div><div class="eyebrow">Payments</div><div class="title">Pay & Transfer</div></div></div>
-<div class="phone-wrap"><div class="phone"><div class="phone-inner"><div class="phone-top">9:41</div><div class="mobile"><div class="greet">Send money</div><div class="mname">Who are you paying?</div><div class="list"><input style="width:100%;border:0;outline:0;font-size:15px" placeholder="Phone, name or account"></div><div class="mgrid"><div><i>↗</i>Send</div><div><i>↙</i>Receive</div><div><i>QR</i>QR Pay</div><div><i>🔗</i>Payment Link</div></div><div class="mgrid"><div><i>↙</i>Request</div><div><i>👥</i>Split</div><div><i>👨‍👩‍👧</i>Family</div><div><i>🎟</i>Ticket</div></div><div class="list"><b>Recent recipients</b><div class="tx"><div class="txl"><div class="txico">JH</div><div><div class="txname">Juma Hassan</div><div class="txsub">+255 7•• ••• 812</div></div></div></div><div class="tx"><div class="txl"><div class="txico">MS</div><div><div class="txname">Mlimani Store</div><div class="txsub">Merchant</div></div></div></div></div></div></div></div>
+<div class="top"><div><div class="eyebrow">Payments</div><div class="title" data-en="Pay & Transfer" data-sw="Lipa na Tuma">Pay & Transfer</div></div></div>
+<div class="phone-wrap"><div class="phone"><div class="phone-inner"><div class="phone-top">9:41</div><div class="mobile"><div class="greet" data-en="Send money" data-sw="Tuma pesa">Send money</div><div class="mname" data-en="Who are you paying?" data-sw="Unamlipa nani?">Who are you paying?</div><div class="list"><input style="width:100%;border:0;outline:0;font-size:15px" placeholder="Phone, name or account"></div><div class="mgrid"><div><i>↗</i data-en="Send" data-sw="Tuma">Send</div><div><i>↙</i data-en="Receive" data-sw="Pokea">Receive</div><div><i>QR</i data-en="QR Pay" data-sw="Lipa kwa QR">QR Pay</div><div><i>🔗</i data-en="Payment Link" data-sw="Kiungo cha malipo">Payment Link</div></div><div class="mgrid"><div><i>↙</i data-en="Request" data-sw="Omba">Request</div><div><i>👥</i data-en="Split" data-sw="Gawana">Split</div><div><i>👨‍👩‍👧</i data-en="Family" data-sw="Familia">Family</div><div><i>🎟</i>Ticket</div></div><div class="list"><b>Recent recipients</b><div class="tx"><div class="txl"><div class="txico">JH</div><div><div class="txname">Juma Hassan</div><div class="txsub">+255 7•• ••• 812</div></div></div></div><div class="tx"><div class="txl"><div class="txico">MS</div><div><div class="txname">Mlimani Store</div><div class="txsub">Merchant</div></div></div></div></div></div></div></div>
 <div class="concept"><span class="badge">Product principle</span><h2>Payments should feel simple. The infrastructure shouldn't be.</h2><p>Behind this simple experience sits transaction orchestration, provider routing, idempotency, limits, risk controls, ledger posting and reconciliation.</p><ul><li>Mobile-money and bank rails behind one interface</li><li>Payment requests and links for P2P and merchants</li><li>QR payments designed for everyday commerce</li><li>Split payments for shared expenses</li><li>Payment links for merchants and individuals</li><li>Clear transaction status and failure handling</li></ul></div></div>
 </section>
 
 <section id="save" class="screen">
 <div class="top"><div><div class="eyebrow">Savings</div><div class="title">Save with purpose</div></div></div>
 <div class="grid">
-<div class="card"><h3>Individual savings goals</h3><div class="tx"><div class="txl"><div class="txico">✈</div><div><div class="txname">December Trip</div><div class="txsub">TZS 620k of TZS 1.2m</div></div></div><b>52%</b></div><div class="tx"><div class="txl"><div class="txico">🏠</div><div><div class="txname">Home Fund</div><div class="txsub">TZS 1.8m of TZS 5m</div></div></div><b>36%</b></div></div>
-<div class="card"><h3>Group savings</h3><p style="color:#667085">Your chama / mchezo groups can have shared goals, contributions, rules and transparent activity.</p><div class="tx"><div class="txl"><div class="txico">👥</div><div><div class="txname">Mtaa Investment Group</div><div class="txsub">18 members • TZS 4.8m</div></div></div><span class="badge">On track</span></div><div class="tx"><div class="txl"><div class="txico">🏆</div><div><div class="txname">30-Day Savings Challenge</div><div class="txsub">12 days remaining • 84% complete</div></div></div><span class="badge">Challenge</span></div></div>
+<div class="card"><h3 data-en="Individual savings goals" data-sw="Malengo ya akiba binafsi" data-en="Individual savings goals" data-sw="Malengo ya akiba binafsi">Individual savings goals</h3><div class="tx"><div class="txl"><div class="txico">✈</div><div><div class="txname">December Trip</div><div class="txsub">TZS 620k of TZS 1.2m</div></div></div><b>52%</b></div><div class="tx"><div class="txl"><div class="txico">🏠</div><div><div class="txname">Home Fund</div><div class="txsub">TZS 1.8m of TZS 5m</div></div></div><b>36%</b></div></div>
+<div class="card"><h3 data-en="Group savings" data-sw="Akiba ya kikundi" data-en="Group savings" data-sw="Akiba ya kikundi">Group savings</h3><p style="color:#667085">Your chama / mchezo groups can have shared goals, contributions, rules and transparent activity.</p><div class="tx"><div class="txl"><div class="txico">👥</div><div><div class="txname">Mtaa Investment Group</div><div class="txsub">18 members • TZS 4.8m</div></div></div><span class="badge">On track</span></div><div class="tx"><div class="txl"><div class="txico">🏆</div><div><div class="txname">30-Day Savings Challenge</div><div class="txsub">12 days remaining • 84% complete</div></div></div><span class="badge">Challenge</span></div></div>
 </div>
 </section>
 
 <section id="business" class="screen">
-<div class="top"><div><div class="eyebrow">Business</div><div class="title">Merchant & business wallet</div></div></div>
+<div class="top"><div><div class="eyebrow" data-en="Business" data-sw="Biashara">Business</div><div class="title">Merchant & business wallet</div></div></div>
 <div class="grid"><div class="card balance"><div class="small">Business available</div><div class="amount">TZS 8,420,300</div><div class="balance-actions"><button class="pill">Collect payment</button><button class="pill">Withdraw</button></div></div>
 <div class="card"><h3>Today</h3><div class="metric"><div class="l">Sales</div><div class="v">TZS 1.24m</div></div><div style="height:10px"></div><div class="metric"><div class="l">Transactions</div><div class="v">84</div></div><div style="height:10px"></div><div class="metric"><div class="l">Settlement</div><div class="v">TZS 980k</div></div></div></div>
 <div class="card" style="margin-top:18px"><h3>Merchant activity</h3><div class="tx"><div class="txl"><div class="txico">QR</div><div><div class="txname">QR collection</div><div class="txsub">Mlimani Store • 10:42</div></div></div><div class="money positive">+ TZS 34,500</div></div><div class="tx"><div class="txl"><div class="txico">🔗</div><div><div class="txname">Payment link</div><div class="txsub">Order #1842 • 10:18</div></div></div><div class="money positive">+ TZS 125,000</div></div></div>
@@ -120,27 +131,27 @@ h3{margin:0 0 14px;font-size:16px}.section-head{display:flex;justify-content:spa
 <section id="bills" class="screen">
 <div class="top"><div><div class="eyebrow">Everyday services</div><div class="title">Bills, Airtime, Data & Tickets</div></div></div>
 <div class="card">
-  <div class="section-head"><h3>Pay for what you need</h3><span class="badge">One financial platform</span></div>
+  <div class="section-head"><h3 data-en="Pay for what you need" data-sw="Lipa kwa unachohitaji" data-en="Pay for what you need" data-sw="Lipa kwa unachohitaji">Pay for what you need</h3><span class="badge" data-en="One financial platform" data-sw="Jukwaa moja la kifedha">One financial platform</span></div>
   <div class="actions">
-    <button class="action"><div class="ico">⚡</div>Electricity</button>
-    <button class="action"><div class="ico">💧</div>Water</button>
-    <button class="action"><div class="ico">📱</div>Airtime</button>
-    <button class="action"><div class="ico">◉</div>Data</button>
-    <button class="action"><div class="ico">🎟</div>Tickets</button>
-    <button class="action"><div class="ico">📺</div>TV</button>
-    <button class="action"><div class="ico">🌐</div>Internet</button>
-    <button class="action"><div class="ico">⋯</div>More</button>
+    <button class="action"><div class="ico">⚡</div data-en="Electricity" data-sw="Umeme">Electricity</button>
+    <button class="action"><div class="ico">💧</div data-en="Water" data-sw="Maji">Water</button>
+    <button class="action"><div class="ico">📱</div data-en="Airtime" data-sw="Muda wa maongezi">Airtime</button>
+    <button class="action"><div class="ico">◉</div data-en="Data" data-sw="Data">Data</button>
+    <button class="action"><div class="ico">🎟</div data-en="Tickets" data-sw="Tiketi">Tickets</button>
+    <button class="action"><div class="ico">📺</div data-en="TV" data-sw="Televisheni">TV</button>
+    <button class="action"><div class="ico">🌐</div data-en="Internet" data-sw="Intaneti">Internet</button>
+    <button class="action"><div class="ico">⋯</div data-en="More" data-sw="Zaidi">More</button>
   </div>
 </div>
 <div class="grid" style="margin-top:18px">
   <div class="card">
-    <h3>Recent services</h3>
-    <div class="tx"><div class="txl"><div class="txico">⚡</div><div><div class="txname">Electricity</div><div class="txsub">LUKU • Paid today</div></div></div><div class="money negative">− TZS 20,000</div></div>
-    <div class="tx"><div class="txl"><div class="txico">📱</div><div><div class="txname">Airtime</div><div class="txsub">+255 7•• ••• 812</div></div></div><div class="money negative">− TZS 10,000</div></div>
+    <h3 data-en="Recent services" data-sw="Huduma za hivi karibuni" data-en="Recent services" data-sw="Huduma za hivi karibuni">Recent services</h3>
+    <div class="tx"><div class="txl"><div class="txico">⚡</div><div><div class="txname" data-en="Electricity" data-sw="Umeme">Electricity</div><div class="txsub">LUKU • Paid today</div></div></div><div class="money negative">− TZS 20,000</div></div>
+    <div class="tx"><div class="txl"><div class="txico">📱</div><div><div class="txname" data-en="Airtime" data-sw="Muda wa maongezi">Airtime</div><div class="txsub">+255 7•• ••• 812</div></div></div><div class="money negative">− TZS 10,000</div></div>
     <div class="tx"><div class="txl"><div class="txico">🎟</div><div><div class="txname">Dar es Salaam event</div><div class="txsub">2 digital tickets</div></div></div><div class="money negative">− TZS 85,000</div></div>
   </div>
   <div class="card">
-    <h3>Upcoming</h3>
+    <h3 data-en="Upcoming" data-sw="Zinazofuata" data-en="Upcoming" data-sw="Zinazofuata">Upcoming</h3>
     <div class="metric"><div class="l">Saved biller</div><div class="v">Home Internet</div></div>
     <div style="height:10px"></div>
     <div class="metric"><div class="l">Next payment</div><div class="v">In 6 days</div></div>
@@ -149,28 +160,28 @@ h3{margin:0 0 14px;font-size:16px}.section-head{display:flex;justify-content:spa
 </section>
 
 <section id="family" class="screen">
-<div class="top"><div><div class="eyebrow">Shared money</div><div class="title">Family Wallet</div></div></div>
+<div class="top"><div><div class="eyebrow" data-en="Shared money" data-sw="Fedha za pamoja">Shared money</div><div class="title" data-en="Family Wallet" data-sw="Mkoba wa Familia">Family Wallet</div></div></div>
 <div class="grid">
   <div class="card">
-    <h3>Household balance</h3>
+    <h3 data-en="Household balance" data-sw="Salio la kaya" data-en="Household balance" data-sw="Salio la kaya">Household balance</h3>
     <div class="amount" style="font-size:30px">TZS 1,284,000</div>
     <p style="color:#667085">Shared money for groceries, school fees, transport and household expenses.</p>
     <div class="actions">
       <button class="action"><div class="ico">+</div>Add money</button>
       <button class="action"><div class="ico">↗</div>Pay</button>
-      <button class="action" onclick="show('pay')"><div class="ico">↙</div>Request</button>
+      <button class="action" onclick="show('pay')"><div class="ico">↙</div data-en="Request" data-sw="Omba">Request</button>
       <button class="action"><div class="ico">≡</div>Rules</button>
     </div>
   </div>
   <div class="card">
-    <h3>Family members</h3>
-    <div class="tx"><div class="txl"><div class="txico">AM</div><div><div class="txname">Amina</div><div class="txsub">Owner • Full access</div></div></div><span class="badge">Owner</span></div>
-    <div class="tx"><div class="txl"><div class="txico">JM</div><div><div class="txname">Juma</div><div class="txsub">Member • TZS 250k limit</div></div></div><span class="badge">Member</span></div>
-    <div class="tx"><div class="txl"><div class="txico">ZS</div><div><div class="txname">Zuri</div><div class="txsub">Family profile</div></div></div><span class="badge">Child</span></div>
+    <h3 data-en="Family members" data-sw="Wanafamilia" data-en="Family members" data-sw="Wanafamilia">Family members</h3>
+    <div class="tx"><div class="txl"><div class="txico">AM</div><div><div class="txname">Amina</div><div class="txsub">Owner • Full access</div></div></div><span class="badge" data-en="Owner" data-sw="Mmiliki">Owner</span></div>
+    <div class="tx"><div class="txl"><div class="txico">JM</div><div><div class="txname">Juma</div><div class="txsub">Member • TZS 250k limit</div></div></div><span class="badge" data-en="Member" data-sw="Mwanachama">Member</span></div>
+    <div class="tx"><div class="txl"><div class="txico">ZS</div><div><div class="txname">Zuri</div><div class="txsub">Family profile</div></div></div><span class="badge" data-en="Child" data-sw="Mtoto">Child</span></div>
   </div>
 </div>
 <div class="card" style="margin-top:18px">
-  <div class="section-head"><h3>Split payment</h3><span class="badge">Shared expenses</span></div>
+  <div class="section-head"><h3 data-en="Split payment" data-sw="Gawanya malipo" data-en="Split payment" data-sw="Gawanya malipo">Split payment</h3><span class="badge" data-en="Shared expenses" data-sw="Gharama za pamoja">Shared expenses</span></div>
   <p style="color:#667085">Restaurant bill • TZS 120,000</p>
   <div class="tx"><div class="txl"><div class="txico">AM</div><div><div class="txname">Amina</div><div class="txsub">Paid</div></div></div><div class="money positive">TZS 40,000</div></div>
   <div class="tx"><div class="txl"><div class="txico">JM</div><div><div class="txname">Juma</div><div class="txsub">Pending request</div></div></div><div class="money">TZS 40,000</div></div>
@@ -179,39 +190,39 @@ h3{margin:0 0 14px;font-size:16px}.section-head{display:flex;justify-content:spa
 </section>
 
 <section id="rewards" class="screen">
-<div class="top"><div><div class="eyebrow">Rewards & loyalty</div><div class="title">Rewards that make money movement more valuable</div></div></div>
+<div class="top"><div><div class="eyebrow" data-en="Rewards & loyalty" data-sw="Zawadi na uaminifu">Rewards & loyalty</div><div class="title" data-en="Rewards that make money movement more valuable" data-sw="Zawadi zinazoongeza thamani ya matumizi ya fedha">Rewards that make money movement more valuable</div></div></div>
 <div class="grid">
-  <div class="card balance"><div class="small">Your rewards balance</div><div class="amount">1,240 pts</div><div class="balance-actions"><button class="pill">Redeem</button><button class="pill">Earn more</button></div></div>
-  <div class="card"><h3>How you earn</h3>
-    <div class="tx"><div class="txl"><div class="txico">QR</div><div><div class="txname">Merchant payments</div><div class="txsub">Earned today</div></div></div><div class="money positive">+120 pts</div></div>
-    <div class="tx"><div class="txl"><div class="txico">◎</div><div><div class="txname">Savings streak</div><div class="txsub">7-week streak</div></div></div><div class="money positive">+250 pts</div></div>
+  <div class="card balance"><div class="small" data-en="Your rewards balance" data-sw="Salio lako la zawadi">Your rewards balance</div><div class="amount">1,240 pts</div><div class="balance-actions"><button class="pill" data-en="Redeem" data-sw="Tumia zawadi">Redeem</button><button class="pill" data-en="Earn more" data-sw="Pata zaidi">Earn more</button></div></div>
+  <div class="card"><h3 data-en="How you earn" data-sw="Jinsi unavyopata" data-en="How you earn" data-sw="Jinsi unavyopata">How you earn</h3>
+    <div class="tx"><div class="txl"><div class="txico">QR</div><div><div class="txname" data-en="Merchant payments" data-sw="Malipo ya wafanyabiashara">Merchant payments</div><div class="txsub">Earned today</div></div></div><div class="money positive">+120 pts</div></div>
+    <div class="tx"><div class="txl"><div class="txico">◎</div><div><div class="txname" data-en="Savings streak" data-sw="Mfululizo wa akiba">Savings streak</div><div class="txsub">7-week streak</div></div></div><div class="money positive">+250 pts</div></div>
   </div>
 </div>
-<div class="card" style="margin-top:18px"><div class="section-head"><h3>Available rewards</h3><span class="link">See all</span></div>
+<div class="card" style="margin-top:18px"><div class="section-head"><h3 data-en="Available rewards" data-sw="Zawadi zinazopatikana" data-en="Available rewards" data-sw="Zawadi zinazopatikana">Available rewards</h3><span class="link">See all</span></div>
 <div class="actions">
-  <button class="action"><div class="ico">🎟</div>Ticket voucher</button>
-  <button class="action"><div class="ico">📱</div>Airtime</button>
-  <button class="action"><div class="ico">🛒</div>Merchant offer</button>
-  <button class="action"><div class="ico">★</div>Cashback</button>
+  <button class="action"><div class="ico">🎟</div data-en="Ticket voucher" data-sw="Vocha ya tiketi">Ticket voucher</button>
+  <button class="action"><div class="ico">📱</div data-en="Airtime" data-sw="Muda wa maongezi">Airtime</button>
+  <button class="action"><div class="ico">🛒</div data-en="Merchant offer" data-sw="Ofa ya mfanyabiashara">Merchant offer</button>
+  <button class="action"><div class="ico">★</div data-en="Cashback" data-sw="Rudishiwa fedha">Cashback</button>
 </div></div>
 </section>
 
 <section id="insights" class="screen">
-<div class="top"><div><div class="eyebrow">Financial intelligence</div><div class="title">Insights & Transaction Management</div></div></div>
-<div class="grid"><div class="card"><h3>Monthly view</h3><div style="height:190px;display:flex;align-items:end;gap:12px;padding:20px 10px 5px;border-bottom:1px solid #ddd">
+<div class="top"><div><div class="eyebrow" data-en="Financial intelligence" data-sw="Maarifa ya kifedha">Financial intelligence</div><div class="title" data-en="Insights & Transaction Management" data-sw="Maarifa na Usimamizi wa Miamala">Insights & Transaction Management</div></div></div>
+<div class="grid"><div class="card"><h3 data-en="Monthly view" data-sw="Muhtasari wa mwezi" data-en="Monthly view" data-sw="Muhtasari wa mwezi">Monthly view</h3><div style="height:190px;display:flex;align-items:end;gap:12px;padding:20px 10px 5px;border-bottom:1px solid #ddd">
 <div style="height:45%;flex:1;background:#cfeee0;border-radius:7px 7px 0 0"></div><div style="height:63%;flex:1;background:#a9dfc9;border-radius:7px 7px 0 0"></div><div style="height:54%;flex:1;background:#84d1b2;border-radius:7px 7px 0 0"></div><div style="height:76%;flex:1;background:#54bd91;border-radius:7px 7px 0 0"></div><div style="height:68%;flex:1;background:#2ca777;border-radius:7px 7px 0 0"></div><div style="height:88%;flex:1;background:#0b7a53;border-radius:7px 7px 0 0"></div></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#98a2b3;padding:6px 10px"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div></div>
-<div class="card"><h3>Useful insights</h3><div class="metric"><div class="l">Most frequent category</div><div class="v">Food & groceries</div></div><div style="height:10px"></div><div class="metric"><div class="l">Potential savings</div><div class="v">TZS 95k / month</div></div><div style="height:10px"></div><div class="metric"><div class="l">Savings streak</div><div class="v">11 weeks</div></div></div></div>
-<div class="card" style="margin-top:18px"><div class="section-head"><h3>Transaction management</h3><span class="badge">Search • Filter • Track</span></div>
+<div class="card"><h3 data-en="Useful insights" data-sw="Maarifa muhimu" data-en="Useful insights" data-sw="Maarifa muhimu">Useful insights</h3><div class="metric"><div class="l" data-en="Most frequent category" data-sw="Aina inayotumika zaidi">Most frequent category</div><div class="v">Food & groceries</div></div><div style="height:10px"></div><div class="metric"><div class="l" data-en="Potential savings" data-sw="Akiba inayowezekana">Potential savings</div><div class="v">TZS 95k / month</div></div><div style="height:10px"></div><div class="metric"><div class="l" data-en="Savings streak" data-sw="Mfululizo wa akiba">Savings streak</div><div class="v">11 weeks</div></div></div></div>
+<div class="card" style="margin-top:18px"><div class="section-head"><h3 data-en="Transaction management" data-sw="Usimamizi wa miamala" data-en="Transaction management" data-sw="Usimamizi wa miamala">Transaction management</h3><span class="badge" data-en="Search • Filter • Track" data-sw="Tafuta • Chuja • Fuatilia">Search • Filter • Track</span></div>
 <div class="tx"><div class="txl"><div class="txico">QR</div><div><div class="txname">Mlimani Store</div><div class="txsub">QR payment • Today 10:42 • Completed</div></div></div><div class="money negative">− TZS 34,500</div></div>
 <div class="tx"><div class="txl"><div class="txico">↗</div><div><div class="txname">Juma Hassan</div><div class="txsub">Transfer • Today 09:18 • Completed</div></div></div><div class="money positive">+ TZS 80,000</div></div>
 <div class="tx"><div class="txl"><div class="txico">🎟</div><div><div class="txname">TicketHub</div><div class="txsub">Ticket payment • Yesterday • Completed</div></div></div><div class="money negative">− TZS 85,000</div></div>
 </div>
 </section>
 
-<div class="top"><div><div class="eyebrow">Financial intelligence</div><div class="title">Understand your money</div></div></div>
-<div class="grid"><div class="card"><h3>Monthly view</h3><div style="height:190px;display:flex;align-items:end;gap:12px;padding:20px 10px 5px;border-bottom:1px solid #ddd">
+<div class="top"><div><div class="eyebrow" data-en="Financial intelligence" data-sw="Maarifa ya kifedha">Financial intelligence</div><div class="title">Understand your money</div></div></div>
+<div class="grid"><div class="card"><h3 data-en="Monthly view" data-sw="Muhtasari wa mwezi" data-en="Monthly view" data-sw="Muhtasari wa mwezi">Monthly view</h3><div style="height:190px;display:flex;align-items:end;gap:12px;padding:20px 10px 5px;border-bottom:1px solid #ddd">
 <div style="height:45%;flex:1;background:#cfeee0;border-radius:7px 7px 0 0"></div><div style="height:63%;flex:1;background:#a9dfc9;border-radius:7px 7px 0 0"></div><div style="height:54%;flex:1;background:#84d1b2;border-radius:7px 7px 0 0"></div><div style="height:76%;flex:1;background:#54bd91;border-radius:7px 7px 0 0"></div><div style="height:68%;flex:1;background:#2ca777;border-radius:7px 7px 0 0"></div><div style="height:88%;flex:1;background:#0b7a53;border-radius:7px 7px 0 0"></div></div><div style="display:flex;justify-content:space-between;font-size:10px;color:#98a2b3;padding:6px 10px"><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span></div></div>
-<div class="card"><h3>Useful insights</h3><div class="metric"><div class="l">Most frequent category</div><div class="v">Food & groceries</div></div><div style="height:10px"></div><div class="metric"><div class="l">Potential savings</div><div class="v">TZS 95k / month</div></div><div style="height:10px"></div><div class="metric"><div class="l">Savings streak</div><div class="v">11 weeks</div></div></div></div>
+<div class="card"><h3 data-en="Useful insights" data-sw="Maarifa muhimu" data-en="Useful insights" data-sw="Maarifa muhimu">Useful insights</h3><div class="metric"><div class="l" data-en="Most frequent category" data-sw="Aina inayotumika zaidi">Most frequent category</div><div class="v">Food & groceries</div></div><div style="height:10px"></div><div class="metric"><div class="l" data-en="Potential savings" data-sw="Akiba inayowezekana">Potential savings</div><div class="v">TZS 95k / month</div></div><div style="height:10px"></div><div class="metric"><div class="l" data-en="Savings streak" data-sw="Mfululizo wa akiba">Savings streak</div><div class="v">11 weeks</div></div></div></div>
 </section>
 </main>
 </div>
@@ -224,5 +235,54 @@ function show(id){
 }
 document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.screen)));
 </script>
+
+
+
+
+<script>
+const EN_TO_SW = {"Graph Fintech — Tanzania Product Concept": "Graph Fintech — Dhana ya Bidhaa Tanzania", "⌂   Home": "⌂   Nyumbani", "↗   Pay & Transfer": "↗   Lipa na Tuma", "▤   Bills & Services": "▤   Bili na Huduma", "◎   Save": "◎   Akiba", "👨‍👩‍👧   Family": "👨‍👩‍👧   Familia", "▣   Business": "▣   Biashara", "★   Rewards": "★   Zawadi", "◒   Insights & Activity": "◒   Maarifa na Shughuli", "Concept product • v0.2": "Dhana ya bidhaa • v0.2", "Financial platform concept": "Dhana ya jukwaa la kifedha", "Good morning, Amina": "Habari za asubuhi, Amina", "Notifications": "Arifa", "Available balance": "Salio linalopatikana", "Send money": "Tuma pesa", "Quick actions": "Vitendo vya haraka", "Built around everyday money": "Imeundwa kwa matumizi ya kila siku ya fedha", "Send": "Tuma", "Receive": "Pokea", "Scan & Pay": "Changanua na Lipa", "Request": "Omba", "Bill / Airtime": "Bili / Muda wa maongezi", "Tickets": "Tiketi", "Family": "Familia", "Business": "Biashara", "Rewards": "Zawadi", "Money snapshot": "Muhtasari wa fedha", "View insights": "Angalia maarifa", "This month": "Mwezi huu", "spent": "imetumika", "Saved": "Iliyohifadhiwa", "points": "pointi", "Recent activity": "Shughuli za hivi karibuni", "Today • QR payment": "Leo • Malipo ya QR", "Today • Received": "Leo • Imepokelewa", "Travel Goal": "Lengo la Safari", "Savings transfer": "Uhamisho wa akiba", "Reward earned": "Zawadi iliyopatikana", "Merchant loyalty": "Uaminifu wa mfanyabiashara", "Payments": "Malipo", "Pay & Transfer": "Lipa na Tuma", "Who are you paying?": "Unamlipa nani?", "QR Pay": "Lipa kwa QR", "Payment Link": "Kiungo cha malipo", "Split": "Gawana", "Ticket": "Tiketi", "Recent recipients": "Waliopokea hivi karibuni", "Merchant": "Mfanyabiashara", "Product principle": "Kanuni ya bidhaa", "Payments should feel simple. The infrastructure shouldn't.": "Malipo yanapaswa kuwa rahisi. Miundombinu ya nyuma haipaswi kuwa rahisi.", "Behind this simple experience sits transaction orchestration, provider routing, idempotency, limits, risk controls, ledger posting and reconciliation.": "Nyuma ya uzoefu huu rahisi kuna uratibu wa miamala, uelekezaji wa watoa huduma, idempotency, vikomo, udhibiti wa hatari, uandikishaji kwenye leja na upatanisho wa miamala.", "Mobile-money and bank rails behind one interface": "Mitandao ya pesa za simu na benki ikiwa nyuma ya kiolesura kimoja", "Payment requests and links for P2P and merchants": "Maombi na viungo vya malipo kwa mtu-kwa-mtu na wafanyabiashara", "QR payments designed for everyday commerce": "Malipo ya QR yaliyoundwa kwa biashara za kila siku", "Split payments for shared expenses": "Gawanya malipo kwa gharama za pamoja", "Payment links for merchants and individuals": "Viungo vya malipo kwa wafanyabiashara na watu binafsi", "Clear transaction status and failure handling": "Hali wazi ya muamala na ushughulikiaji wa miamala iliyoshindikana", "Savings": "Akiba", "Save with purpose": "Weka akiba kwa lengo", "Individual savings goals": "Malengo ya akiba binafsi", "December Trip": "Safari ya Desemba", "Home Fund": "Mfuko wa Nyumba", "Group savings": "Akiba ya kikundi", "Your chama / mchezo groups can have shared goals, contributions, rules and transparent activity.": "Vikundi vyako vya chama / mchezo vinaweza kuwa na malengo ya pamoja, michango, kanuni na shughuli zinazoonekana wazi.", "On track": "Inaendelea vizuri", "30-Day Savings Challenge": "Changamoto ya Akiba ya Siku 30", "12 days remaining • 84% complete": "Siku 12 zimebaki • imekamilika kwa 84%", "Challenge": "Changamoto", "Merchant & business wallet": "Mkoba wa mfanyabiashara na biashara", "Business available": "Salio la biashara", "Collect payment": "Kusanya malipo", "Withdraw": "Toa pesa", "Today": "Leo", "Sales": "Mauzo", "Transactions": "Miamala", "Settlement": "Usuluhishaji", "Merchant activity": "Shughuli za mfanyabiashara", "QR collection": "Ukusanyaji wa QR", "Payment link": "Kiungo cha malipo", "Order #1842 • 10:18": "Oda #1842 • 10:18", "Everyday services": "Huduma za kila siku", "Bills, Airtime, Data & Tickets": "Bili, Muda wa maongezi, Data na Tiketi", "Pay for what you need": "Lipa kwa unachohitaji", "One financial platform": "Jukwaa moja la kifedha", "Electricity": "Umeme", "Water": "Maji", "Airtime": "Muda wa maongezi", "Data": "Data", "TV": "Televisheni", "Internet": "Intaneti", "More": "Zaidi", "Recent services": "Huduma za hivi karibuni", "LUKU • Paid today": "LUKU • Imelipwa leo", "Dar es Salaam event": "Tukio la Dar es Salaam", "2 digital tickets": "Tiketi 2 za kidijitali", "Upcoming": "Zinazofuata", "Saved biller": "Mtoa huduma aliyehifadhiwa", "Home Internet": "Intaneti ya nyumbani", "Next payment": "Malipo yanayofuata", "In 6 days": "Baada ya siku 6", "Shared money": "Fedha za pamoja", "Family Wallet": "Mkoba wa Familia", "Household balance": "Salio la kaya", "Shared money for groceries, school fees, transport and household expenses.": "Fedha za pamoja kwa chakula, ada za shule, usafiri na gharama za kaya.", "Add money": "Ongeza pesa", "Rules": "Kanuni", "Family members": "Wanafamilia", "Owner • Full access": "Mmiliki • Ufikiaji kamili", "Owner": "Mmiliki", "Member • TZS 250k limit": "Mwanachama • Kikomo TZS 250k", "Member": "Mwanachama", "Family profile": "Wasifu wa familia", "Child": "Mtoto", "Split payment": "Gawanya malipo", "Shared expenses": "Gharama za pamoja", "Restaurant bill • TZS 120,000": "Bili ya mgahawa • TZS 120,000", "Paid": "Imelipwa", "Pending request": "Ombi linalosubiri", "Covered by family wallet": "Imelipwa na mkoba wa familia", "Rewards & loyalty": "Zawadi na uaminifu", "Rewards that make money movement more valuable": "Zawadi zinazoongeza thamani ya matumizi ya fedha", "Your rewards balance": "Salio lako la zawadi", "Redeem": "Tumia zawadi", "Earn more": "Pata zaidi", "How you earn": "Jinsi unavyopata", "Merchant payments": "Malipo ya wafanyabiashara", "Earned today": "Imepatikana leo", "Savings streak": "Mfululizo wa akiba", "7-week streak": "Mfululizo wa wiki 7", "Available rewards": "Zawadi zinazopatikana", "See all": "Angalia zote", "Ticket voucher": "Vocha ya tiketi", "Merchant offer": "Ofa ya mfanyabiashara", "Cashback": "Rudishiwa fedha", "Financial intelligence": "Maarifa ya kifedha", "Insights & Transaction Management": "Maarifa na Usimamizi wa Miamala", "Monthly view": "Muhtasari wa mwezi", "May": "Mei", "Jun": "Juni", "Jul": "Julai", "Aug": "Agosti", "Sep": "Septemba", "Oct": "Oktoba", "Useful insights": "Maarifa muhimu", "Most frequent category": "Aina inayotumika zaidi", "Food & groceries": "Chakula na bidhaa za nyumbani", "Potential savings": "Akiba inayowezekana", "Transaction management": "Usimamizi wa miamala", "Search • Filter • Track": "Tafuta • Chuja • Fuatilia", "QR payment • Today 10:42 • Completed": "Malipo ya QR • Leo 10:42 • Yamekamilika", "Transfer • Today 09:18 • Completed": "Uhamisho • Leo 09:18 • Umekamilika", "Ticket payment • Yesterday • Completed": "Malipo ya tiketi • Jana • Yamekamilika", "Understand your money": "Elewa fedha zako"};
+const SW_TO_EN = Object.fromEntries(Object.entries(EN_TO_SW).map(([en, sw]) => [sw, en]));
+
+function replaceInTextNode(node, map) {
+  const raw = node.nodeValue;
+  const trimmed = raw.trim();
+  if (!trimmed) return;
+  // Prefer the longest match so "Home Internet" is translated before "Home".
+  const keys = Object.keys(map).sort((a,b) => b.length - a.length);
+  for (const key of keys) {
+    if (trimmed.includes(key)) {
+      const translated = trimmed.split(key).join(map[key]);
+      const start = raw.indexOf(trimmed);
+      node.nodeValue = raw.slice(0,start) + translated + raw.slice(start + trimmed.length);
+      return;
+    }
+  }
+}
+
+function setLang(lang) {
+  const toSw = lang === 'sw';
+  document.documentElement.lang = toSw ? 'sw' : 'en';
+  const map = toSw ? EN_TO_SW : SW_TO_EN;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    if (node.parentElement && ['SCRIPT','STYLE'].includes(node.parentElement.tagName)) continue;
+    replaceInTextNode(node, map);
+  }
+  document.querySelectorAll('input[placeholder]').forEach(input => {
+    const ph = input.getAttribute('placeholder');
+    if (map[ph]) input.setAttribute('placeholder', map[ph]);
+  });
+  document.getElementById('lang-en').classList.toggle('active', !toSw);
+  document.getElementById('lang-sw').classList.toggle('active', toSw);
+  localStorage.setItem('graph-fintech-lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Swahili is the default language for the Tanzania concept.
+  setLang(localStorage.getItem('graph-fintech-lang') || 'sw');
+});
+</script>
+
 </body>
 </html>
